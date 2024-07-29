@@ -40,7 +40,7 @@ def get_commitments(investor_id: int, asset_class: str) -> List[Commitment]:
   
   result: List[Commitment] = []
   for commitment in data["commitments"]:
-    if commitment["firm_id"] == investor_id and commitment["asset_class"] == asset_class:
+    if commitment["firm_id"] == investor_id and commitment["asset_class"] == asset_class.lower():
       parsed_commitment = Commitment(**commitment)
       result.append(parsed_commitment)
 
